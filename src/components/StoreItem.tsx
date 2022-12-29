@@ -15,7 +15,7 @@ export function StoreItem({id, name, price, imgUrl}:StoreItemProps){
         getItemQuantity,
         increaseQuantity,
         decreaseQuantity,
-        removeQuantity
+        removeFromCart,
     } = useShoppingCart()
     const quantity = getItemQuantity(id);
     return(
@@ -42,7 +42,7 @@ export function StoreItem({id, name, price, imgUrl}:StoreItemProps){
                  </div>
                   <Button onClick={()=>increaseQuantity(id)}>+</Button>
               </div>
-              <Button variant='danger' size='sm' onClick={()=>removeQuantity(id)}>Remove</Button>
+              <Button variant='danger' size='sm' onClick={()=>removeFromCart(id)}>Remove</Button>
               </div>}
           </div>
       </Card.Body>
